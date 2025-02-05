@@ -1,0 +1,33 @@
+<div class="container-fluid bg-dark text-light pr-5 pl-5">
+    <div class="container bg-dark p-5">
+        <h1 class="display-6">{{conditionName}}</h1>
+        <p class="fst-italic">{{longDescription}}</p>
+        <hr>
+        <h6 class="text-danger">Foods to Avoid with {{conditionName}}:</h6>
+        <ul>
+        {{#each unique}}
+            <li>{{this}}</li>
+        {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div class="container bg-light w-80">
+    <div class="row row-cols-1 row-cols-md-1 mt-0 g-4">
+        <h6>Curated recipes for {{conditionName}}</h6>
+    </div>
+    <div class="row row-cols-1 row-cols-md-6 mt-0 g-4">
+    {{#each recipe_array}}
+        <div class="col">
+            <div class="card Card h-100">
+                <img src="{{this.image}}" class="card-img-top" alt="{{this.label}}">
+                <div class="card-body">
+                    <p class="card-title recipe-title-size">{{this.label}}</p>
+                    <p class="card-text recipe-link-size"><a href="{{this.url}}">Recipe from {{this.source}}</a></p>
+                    <a href="/video_selection?search={{this.label}}" class="btn btn-primary btn-sm recipe-btn-size">Find Related Videos →</a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+    </div>
+</div>

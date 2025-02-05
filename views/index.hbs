@@ -1,0 +1,35 @@
+<div class="container-fluid bg-dark text-light pr-5 pl-5">
+    <div class="container bg-dark p-5">
+        <h1 class="display-4">Welcome to Hearty Cookery</h1>
+        <hr>
+        <p>Find curated recipes based on your ailments</p>
+    </div>
+</div>
+
+<div class="container bg-light w-80">
+    <div class="row row-cols-1 row-cols-md-3 mt-0 g-4">
+    {{#each availableHealthConditions}}
+        <div class="col">
+            <div class="card Card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.conditionName}}</h5>
+                    <p class="card-text">{{this.longDescription}}</p>
+                    <a href="/recipe_selection?id={{this.healthConditionID}}" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+    {{#each otherHealthConditions}}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">{{this.conditionName}}</h5>
+                    <p class="card-text text-muted">{{this.longDescription}}</p>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+    </div>
+</div>
+
+

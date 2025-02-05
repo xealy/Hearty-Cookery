@@ -1,0 +1,21 @@
+<div class="container-fluid bg-dark text-light pr-5 pl-5">
+    <div class="container bg-dark p-3">
+        <h1 class="display-6 video-display">Related videos for '{{searchTerms}}'</h1>
+    </div>
+</div>
+
+<div class="container bg-light w-80">
+    <div class="row row-cols-1 row-cols-md-5 mt-0 g-4">
+    {{#each search_array}}
+        <div class="col">
+            <div class="card Card h-100">
+                <img src="{{this.thumbnail}}" class="card-img-top" alt="{{this.label}}">
+                <div class="card-body">
+                    <p class="card-title fs-6">{{this.title}}</p>
+                    <a href="https://www.youtube.com/watch?v={{this.videoId}}" class="stretched-link"></a>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+    </div>
+</div>
