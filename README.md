@@ -32,6 +32,8 @@ Rough steps:
   * Run command for Docker deployment on AWS EC2 (API keys with auto-filled AWS creds via EC2):
     docker run -p 80:80 -i -e NUTRIDIGM_API_KEY=XXX -e EDAMAM_API_KEY=XXX -e EDAMAM_APP_ID=XXX -e YOUTUBE_API_KEY=XXX lilxandra/hearty-cookery-final
 
+**NOTE**: When deploying to AWS EC2, credentials are auto filled via internal authentication, hence there’s no need to input them in the docker run command. The inclusion of the AWS config object is all that is required to retrieve these credentials.
+
 ## Screenshots
 Instead of screenrecording a demo of how to use the app I screenrecorded myself making it :))) So here are some screenshots instead:
 1. Click on a health condition to receive curated list of recipes for this condition (due to free version of Nutridigm API key, there are only food databases available for a limit of 2 health conditions, therefore others are disabled):
